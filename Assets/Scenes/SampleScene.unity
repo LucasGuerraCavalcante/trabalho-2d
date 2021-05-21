@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &247383491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247383492}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &247383492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247383491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4, y: -0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 729977425}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +206,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -221,7 +251,7 @@ GameObject:
   - component: {fileID: 729977427}
   - component: {fileID: 729977428}
   m_Layer: 0
-  m_Name: Dwarf_Sprite_Sheet1.2v_0
+  m_Name: PlayerDwarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,9 +335,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729977422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.51, y: -3.14, z: 0}
+  m_LocalPosition: {x: -12.74, y: -5.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 247383492}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -323,7 +354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470306991e4fda8799191041ef2e6d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 5
+  jumpForce: 450
+  groundCheck: {fileID: 247383492}
+  circleOverlapRadius: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &729977427
 Rigidbody2D:
   serializedVersion: 4
@@ -344,9 +381,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &729977428
-BoxCollider2D:
+  m_Constraints: 4
+--- !u!70 &729977428
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -358,19 +395,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.95}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.4, y: 1.9}
-    newSize: {x: 2.4, y: 1.9}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.4, y: 1.9}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.2, y: 0.95}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 1
 --- !u!1 &1025671289
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +409,7 @@ GameObject:
   - component: {fileID: 1025671292}
   - component: {fileID: 1025671291}
   - component: {fileID: 1025671290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cobra Sprite Sheet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025671289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.346, y: -4.1361, z: 0}
+  m_LocalPosition: {x: -0.03, y: -6.15, z: 0}
   m_LocalScale: {x: 12.266953, y: 1.088591, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
