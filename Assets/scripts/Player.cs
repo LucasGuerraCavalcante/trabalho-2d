@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         anim.SetBool("onGround", isOnGround);
     }
 
-    void Flip(bool faceRight) {
-        spr.flipX = faceRight;
+    void Flip(bool isFacingLeft) {
+        spr.flipX = isFacingLeft;
     }
 }
