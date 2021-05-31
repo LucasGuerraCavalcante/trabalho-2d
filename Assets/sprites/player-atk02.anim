@@ -83,7 +83,7 @@ AnimationClip:
   m_Events:
   - time: 0.1
     functionName: AttackEnemy
-    data: atk2
+    data: atk02
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

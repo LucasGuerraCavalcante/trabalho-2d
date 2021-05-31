@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     // Walk
     public float moveSpeed = 5.0f;
-    private float x = 1;
 
     // Jump
     public float jumpForce = 500;
@@ -66,7 +65,7 @@ public class Player : MonoBehaviour
     }
 
     public void AttackEnemy(string atkType) {
-        if (enemyInArea != null) {
+        if (enemyInArea != null && enemyInArea.enemyHP > 0) {
             if (atkType == "atk01") enemyInArea.TakeDamage(3);
             if (atkType == "atk02") enemyInArea.TakeDamage(2);
             if (atkType == "atk03") enemyInArea.TakeDamage(1);
@@ -75,8 +74,6 @@ public class Player : MonoBehaviour
 
     void Flip(bool isFacingLeft) {
         spr.flipX = isFacingLeft;
-        // x*=-1;
-        // transform.localScale = new Vector3(x*transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 
     void OnTriggerStay2D(Collider2D other) {
