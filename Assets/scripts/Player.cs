@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         if (enemyInArea != null && enemyInArea.enemyHP > 0) {
             if (atkType == "atk01") enemyInArea.TakeDamage(3);
             if (atkType == "atk02") enemyInArea.TakeDamage(2);
-            if (atkType == "atk03") enemyInArea.TakeDamage(1);
+            if (atkType == "atk03") enemyInArea.TakeDamage(2);
         }
     }
 

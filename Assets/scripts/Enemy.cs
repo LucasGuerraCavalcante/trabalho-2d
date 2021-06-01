@@ -41,4 +41,15 @@ public class Enemy : MonoBehaviour
     public void DestroyEnemy() {
         Destroy(gameObject);
     }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "EnemyWall") {
+            moveSpeed *= -1;
+            Flip();
+        }
+    }
+
+    void Flip() {
+        spr.flipX = !spr.flipX;
+    }
 }
