@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   enemyHP: 2
+  enemyDamage: 1
 --- !u!95 &4918811682692745888
 Animator:
   serializedVersion: 3
