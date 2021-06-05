@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     // HP
     public int HP = 10;
+    public int maxHP = 10;
     public bool isAlive = true;
     // Walk
     public float moveSpeed = 5.0f;
@@ -93,6 +94,12 @@ public class Player : MonoBehaviour
     void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.layer == 7) {
             enemyInArea = null;
+        }
+        if (other.gameObject.layer == 8) {
+            if (HP < maxHP) {
+                HP = maxHP;
+                Destroy(other.gameObject);
+            }
         }
     }
 }
