@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player-atk03
+  m_Name: crab-attack
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -5348225302088368333, guid: 4a1102416ef3455189f9a5fc2457415f, type: 3}
-    - time: 0.016666668
-      value: {fileID: -4601486499000046011, guid: 4a1102416ef3455189f9a5fc2457415f, type: 3}
+      value: {fileID: -8430504614187828873, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
+    - time: 0.16666667
+      value: {fileID: -6988495053032063335, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
+    - time: 0.33333334
+      value: {fileID: 8597440773393507254, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
+    - time: 0.5
+      value: {fileID: -5523501530172330235, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,14 +46,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -5348225302088368333, guid: 4a1102416ef3455189f9a5fc2457415f, type: 3}
-    - {fileID: -4601486499000046011, guid: 4a1102416ef3455189f9a5fc2457415f, type: 3}
+    - {fileID: -8430504614187828873, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
+    - {fileID: -6988495053032063335, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
+    - {fileID: 8597440773393507254, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
+    - {fileID: -5523501530172330235, guid: d3e794c1f91a97cc2a667e1e6773fc34, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.033333335
+    m_StopTime: 0.51666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -68,11 +74,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0
-    functionName: AttackEnemy
-    data: atk03
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
