@@ -17,27 +17,27 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Spawn()
     {
-        Instantiate(obejctSpawn[generateRandomIndex()], transform.position, Quaternion.identity);
+        spawnEnemy();
         
         levelCounter += 1;
 
         if (levelCounter == 10) {
             spawnAgainAfter -= 2;
 
-            Invoke("spawnExtraEnemy", 5);
-            Invoke("spawnExtraEnemy", 10);
+            Invoke("spawnEnemy", 5);
+            Invoke("spawnEnemy", 10);
         } else if (levelCounter == 7) {
             spawnAgainAfter -= 2;
 
-            Invoke("spawnExtraEnemy", 5);
+            Invoke("spawnEnemy", 5);
         } else if (levelCounter == 5) {
             spawnAgainAfter -= 2;
 
-            Invoke("spawnExtraEnemy", 5);
+            Invoke("spawnEnemy", 5);
         } else if (levelCounter == 3) {
             spawnAgainAfter -= 2;
             
-            Invoke("spawnExtraEnemy", 5);
+            Invoke("spawnEnemy", 5);
         }
     }
 
@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
         return (int) Random.Range(0, obejctSpawn.Length);
     }
 
-    void spawnExtraEnemy() {
+    void spawnEnemy() {
         Instantiate(obejctSpawn[generateRandomIndex()], transform.position, Quaternion.identity);
     }
 }
