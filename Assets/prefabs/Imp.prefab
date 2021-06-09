@@ -147,6 +147,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   enemyHP: 6
+  enemyDamage: 2
+  dropItemCounter: 0
+  possibleItensToDrop:
+  - {fileID: 5943742536177477587, guid: 279bc1f586d25157eb2e57850d6c87bf, type: 3}
 --- !u!95 &2992063299023596980
 Animator:
   serializedVersion: 3

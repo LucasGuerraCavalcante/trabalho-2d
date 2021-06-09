@@ -101,6 +101,9 @@ MonoBehaviour:
   moveSpeed: 2
   enemyHP: 2
   enemyDamage: 1
+  dropItemCounter: 0
+  possibleItensToDrop:
+  - {fileID: 5943742536177477587, guid: 279bc1f586d25157eb2e57850d6c87bf, type: 3}
 --- !u!61 &2394820559673486584
 BoxCollider2D:
   m_ObjectHideFlags: 0

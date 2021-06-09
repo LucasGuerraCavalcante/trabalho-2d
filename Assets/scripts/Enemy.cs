@@ -7,10 +7,10 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 2;
     public int enemyHP = 2;
     public int enemyDamage = 2;
+     public GameObject[] possibleItensToDrop;
     Rigidbody2D rig;
     SpriteRenderer spr;
     Animator anim; 
-
 
     // Start is called before the first frame update
     void Start()
@@ -29,35 +29,44 @@ public class Enemy : MonoBehaviour
             rig.velocity = Vector2.zero;
         }
     }
-
-    public void TakeDamage(int damage) {
+    public bool TakeDamage(int damage, int dropItemCounter) {
         enemyHP -= damage;
         if (enemyHP <= 0) {
             anim.SetTrigger("dead");
+
+            if (dropItemCounter != 0 && dropItemCounter % 4 == 0) {
+                dropItem();
+            }
+
+            return true;
         } else {
             anim.SetTrigger("damage");
+
+            return false;
         }
     }
-
     public void DestroyEnemy() {
         Destroy(gameObject);
     }
-
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "EnemyWall") {
             moveSpeed *= -1;
             Flip();
         }
     }
-
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.tag == "Player" && enemyHP > 0) {
             anim.SetTrigger("attack");
             other.gameObject.GetComponent<Player>().TakeDamage(enemyDamage);
         }
     }
-
     void Flip() {
         spr.flipX = !spr.flipX;
+    }
+    int generateRandomIndex () {
+        return (int) Random.Range(0, possibleItensToDrop.Length);
+    }
+    void dropItem() {
+        Instantiate(possibleItensToDrop[generateRandomIndex()], transform.position, Quaternion.identity);
     }
 }

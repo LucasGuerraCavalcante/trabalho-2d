@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public int HP = 10;
     public int maxHP = 10;
     public bool isAlive = true;
+
     // Walk
     public float moveSpeed = 5.0f;
     // Jump
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
     private SpriteRenderer spr;
+    // Other
+    public int dropItemCounter = 0;
     private Enemy enemyInArea = null;
     // Start is called before the first frame update
     void Start()
@@ -78,9 +81,27 @@ public class Player : MonoBehaviour
     }
     public void AttackEnemy(string atkType) {
         if (enemyInArea != null && enemyInArea.enemyHP > 0) {
-            if (atkType == "atk01") enemyInArea.TakeDamage(3);
-            if (atkType == "atk02") enemyInArea.TakeDamage(2);
-            if (atkType == "atk03") enemyInArea.TakeDamage(2);
+            if (atkType == "atk01") {
+                bool attackAndDeadCheck = enemyInArea.TakeDamage(3, dropItemCounter);
+
+                if (attackAndDeadCheck == true) {
+                    dropItemCounter += 1;
+                }
+            };
+            if (atkType == "atk02") {
+                bool attackAndDeadCheck = enemyInArea.TakeDamage(2, dropItemCounter);
+
+                if (attackAndDeadCheck == true) {
+                    dropItemCounter += 1;
+                }
+            };
+            if (atkType == "atk03") {
+                bool attackAndDeadCheck = enemyInArea.TakeDamage(2, dropItemCounter);
+
+                if (attackAndDeadCheck == true) {
+                    dropItemCounter += 1;
+                }
+            };
         }
     }
     void Flip(bool isFacingLeft) {

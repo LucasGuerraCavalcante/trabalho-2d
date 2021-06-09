@@ -167,3 +167,6 @@ MonoBehaviour:
   moveSpeed: 2
   enemyHP: 3
   enemyDamage: 2
+  dropItemCounter: 0
+  possibleItensToDrop:
+  - {fileID: 5943742536177477587, guid: 279bc1f586d25157eb2e57850d6c87bf, type: 3}
