@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     public int HP = 10;
     public int maxHP = 10;
     public bool isAlive = true;
-
     // Walk
     public float moveSpeed = 5.0f;
     // Jump
@@ -39,10 +38,8 @@ public class Player : MonoBehaviour
             float h = Input.GetAxis("Horizontal");
             rig.velocity = new Vector2(h*moveSpeed, rig.velocity.y); 
             anim.SetFloat("speed", Mathf.Abs(h));
-
             // Flip Player
             if (h > 0) Flip(false); else if (h < 0) Flip(true);
-
             // Jump
             bool isOnGround = Physics2D.OverlapCircle(groundCheck.position, circleOverlapRadius, whatIsGround);
             if (Input.GetButtonDown("Jump") && isOnGround) {
@@ -52,15 +49,12 @@ public class Player : MonoBehaviour
             anim.SetBool("onGround", isOnGround);
 
             // Attacks
-
             if (Input.GetKeyDown(KeyCode.J)) {
                 AttackAnimation("atk01"); // Up to down axe attack
-            }
-            
+            }           
             if (Input.GetKeyDown(KeyCode.K)) {
                 AttackAnimation("atk02"); // Side axe attack
             }
-
             if (Input.GetKeyDown(KeyCode.L)) {
                 AttackAnimation("atk03"); // Spin axe attack
             }

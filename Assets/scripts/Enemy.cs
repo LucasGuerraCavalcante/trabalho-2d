@@ -7,10 +7,10 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 2;
     public int enemyHP = 2;
     public int enemyDamage = 2;
-     public GameObject[] possibleItensToDrop;
-    Rigidbody2D rig;
-    SpriteRenderer spr;
-    Animator anim; 
+    public GameObject[] possibleItensToDrop;
+    protected Rigidbody2D rig;
+    protected SpriteRenderer spr;
+    protected Animator anim; 
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (enemyHP > 0) {
             rig.velocity = new Vector2(moveSpeed, rig.velocity.y);
