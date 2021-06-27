@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470306991e4fda8799191041ef2e6d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10000
+  HP: 10
   maxHP: 10
   isAlive: 1
   moveSpeed: 5

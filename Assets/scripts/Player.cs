@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("dead");
             isAlive = false;
             GetComponent<CapsuleCollider2D>().enabled = false; 
+            Invoke("GameOver", 3);
         } else {
             anim.SetTrigger("damage");
         }
@@ -116,5 +118,9 @@ public class Player : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+    }
+
+    public void GameOver() {
+        SceneManager.LoadScene(0);
     }
 }
