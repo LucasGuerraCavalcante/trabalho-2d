@@ -22,20 +22,20 @@ public class Spawner : MonoBehaviour
         levelCounter += 1;
 
         if (levelCounter == 10) {
-            spawnAgainAfter -= 2;
+            spawnAgainAfter -= 5;
 
             Invoke("spawnEnemy", 5);
             Invoke("spawnEnemy", 10);
         } else if (levelCounter == 7) {
-            spawnAgainAfter -= 2;
+            spawnAgainAfter -= 5;
 
             Invoke("spawnEnemy", 5);
         } else if (levelCounter == 5) {
-            spawnAgainAfter -= 2;
+            spawnAgainAfter -= 5;
 
             Invoke("spawnEnemy", 5);
-        } else if (levelCounter == 3) {
-            spawnAgainAfter -= 2;
+        } else if (levelCounter == 5) {
+            spawnAgainAfter -= 5;
             
             Invoke("spawnEnemy", 5);
         }
